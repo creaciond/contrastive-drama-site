@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}Contrastive Drama: Compare dramas{% endblock %}
+
+{% block intro %}
+<div class="container">
+    <h1 class="mt-5">Compare dramas</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+<form>
+    <div class="row"><h4 class="mt-2">Step 1: Choose corpora</h4></div>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="corpus1">Choose first corpus:</label>
+            <select class="custom-select" id="corpus1">
+                <option value="rus">Russian</option>
+                <option value="ger">English (Shakespeare)</option>
+                <option value="shake">German</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="corpus1">Choose second corpus:</label>
+            <select class="custom-select" id="corpus2">
+                <option value="rus">Russian</option>
+                <option value="ger">English (Shakespeare)</option>
+                <option value="shake">German</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row"><h4 class="mt-2">Step 2: Choose comparison parameter</h4></div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="custom-control custom-radio">
+                <input name="comparison" type="radio" id="relations" value="relations" class="custom-control-input">
+                <label class="custom-control-label" for="relations">Family relations</label>
+            </div>
+            <select class="custom-select" id="relations_type_select">
+                <option value="parents_children">Parents vs. Children</option>
+                <option value="husbands_wives">Husbands vs. Wives</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <div class="custom-control custom-radio">
+                <input name="comparison" type="radio" id="time" value="time" class="custom-control-input">
+                <label class="custom-control-label" for="time">Evolution through time</label>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="custom-control custom-radio">
+                <input name="comparison" type="radio" id="genre" value="genre" class="custom-control-input">
+                <label class="custom-control-label" for="genre">Genre</label>
+            </div>
+            <select class="custom-select" id="genre_type_select">
+                <option value="comedies">Comedies</option>
+                <option value="tragedies">Tragedies</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <div class="custom-control custom-radio">
+                <input name="comparison" type="radio" id="text_type" value="text_type" class="custom-control-input">
+                <label class="custom-control-label" for="text_type">Text type</label>
+            </div>
+            <select class="custom-select" id="text_type_select">
+                <option value="spoken">Spoken text</option>
+                <option value="stage">Stage direction</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row"><h4 class="mt-2">Step 3: Choose operationalization parameter</h4></div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="custom-control custom-radio">
+                <input name="parameter" type="radio" id="frequency" value="frequency" class="custom-control-input">
+                <label class="custom-control-label" for="frequency">Frequency</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="custom-control custom-radio">
+                <input name="parameter" type="radio" id="prefer_avoid" value="prefer_avoid" class="custom-control-input">
+                <label class="custom-control-label" for="prefer_avoid">Items preferred/items avoided</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="custom-control custom-radio">
+                <input name="parameter" type="radio" id="keyness" value="keyness" class="custom-control-input">
+                <label class="custom-control-label" for="keyness">Key items</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row"><h4 class="mt-2">Step 4: Choose what to count</h4></div>
+    <div class="row">
+        <div class="d-block">
+            <div class="custom-control custom-radio">
+                <input name="count" type="radio" id="pos" value="pos" class="custom-control-input">
+                <label class="custom-control-label" for="pos">Parts of speech</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input name="count" type="radio" id="words" value="words" class="custom-control-input">
+                <label class="custom-control-label" for="words">Words</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <button class="btn btn-primary btn-lg" type="submit">Compare</button>
+    </div>
+</form>
+{% endblock %}

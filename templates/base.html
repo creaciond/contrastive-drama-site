@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/trivia.css')}}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div class="d-flex flex-column min-vh-100">
+<header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Contrastive Drama</a>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/compare">Compare dramas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main class="flex-fill">
+    <div class="jumbotron">
+        {% block intro %}{% endblock %}
+    </div>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</main>
+
+<footer id="sticky-footer" class="footer-style">
+  <div class="container">
+      <span class="text-muted">
+          <p>Created for <span class="font-italic">Contrastive Analysis of Multilignual Corpora</span>
+              MA dissertation in Digital Humanities at Higher School of Economics (Moscow, Russia).</p>
+      </span>
+  </div>
+</footer>
+</div>
+<!-- JS -->
+<script src="{{url_for('static', filename='/js/jquery.min.css')}}"></script>
+<script src="{{url_for('static', filename='/js/bootstrap.bundle.min.js')}}"></script>
+</body>
+</html>
