@@ -1,5 +1,5 @@
-from flask import Flask, url_for, render_template
-
+from flask import Flask, url_for, render_template, request
+from get_results import *
 
 app = Flask(__name__)
 
@@ -12,6 +12,19 @@ def index():
 @app.route("/compare")
 def compare():
     return render_template("compare.html")
+
+
+@app.route("/results", methods=["GET", "POST"])
+def results():
+    if request:
+        corpus1 = request.form["corpus1"]
+        corpus2 = request.form["corpus2"]
+        for i, corpus in enumerate([corpus1, corpus2]):
+            if request.form["count"] == "pos":
+                plot_frequencies(corpus, i)
+            elif request.form["count"] == "words":
+                plot_words(corpus, i)
+        return render_template("results.html")
 
 
 @app.route("/about")
