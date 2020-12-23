@@ -9,30 +9,35 @@
 {% endblock %}
 
 {% block content %}
-<form>
+<form method="POST" action="/results">
     <div class="row"><h4 class="mt-2">Step 1: Choose corpora</h4></div>
     <div class="row">
         <div class="col-md-6">
             <label for="corpus1">Choose first corpus:</label>
-            <select class="custom-select" id="corpus1">
+            <select class="custom-select" name="corpus1" id="corpus1">
                 <option value="rus">Russian</option>
-                <option value="ger">English (Shakespeare)</option>
-                <option value="shake">German</option>
+                <option value="shake">English (Shakespeare)</option>
+                <option value="ger">German</option>
             </select>
         </div>
+
         <div class="col-md-6">
-            <label for="corpus1">Choose second corpus:</label>
-            <select class="custom-select" id="corpus2">
+            <label for="corpus2">Choose second corpus:</label>
+            <select class="custom-select" name="corpus2" id="corpus2">
                 <option value="rus">Russian</option>
-                <option value="ger">English (Shakespeare)</option>
-                <option value="shake">German</option>
+                <option value="shake">English (Shakespeare)</option>
+                <option value="ger">German</option>
             </select>
         </div>
     </div>
 
     <div class="row"><h4 class="mt-2">Step 2: Choose comparison parameter</h4></div>
     <div class="row">
-        <div class="col-md-3">
+        <div class="custom-control custom-radio">
+                <input name="comparison" type="radio" id="time" value="time" class="custom-control-input">
+                <label class="custom-control-label" for="time">Evolution through time</label>
+        </div>
+        <!-- <div class="col-md-3">
             <div class="custom-control custom-radio">
                 <input name="comparison" type="radio" id="relations" value="relations" class="custom-control-input">
                 <label class="custom-control-label" for="relations">Family relations</label>
@@ -47,8 +52,8 @@
                 <input name="comparison" type="radio" id="time" value="time" class="custom-control-input">
                 <label class="custom-control-label" for="time">Evolution through time</label>
             </div>
-        </div>
-        <div class="col-md-3">
+        </div> -->
+        <!-- <div class="col-md-3">
             <div class="custom-control custom-radio">
                 <input name="comparison" type="radio" id="genre" value="genre" class="custom-control-input">
                 <label class="custom-control-label" for="genre">Genre</label>
@@ -67,10 +72,9 @@
                 <option value="spoken">Spoken text</option>
                 <option value="stage">Stage direction</option>
             </select>
-        </div>
+        </div> -->
     </div>
-
-    <div class="row"><h4 class="mt-2">Step 3: Choose operationalization parameter</h4></div>
+    <!-- <div class="row"><h4 class="mt-2">Step 3: Choose operationalization parameter</h4></div>
     <div class="row">
         <div class="col-md-4">
             <div class="custom-control custom-radio">
@@ -90,9 +94,9 @@
                 <label class="custom-control-label" for="keyness">Key items</label>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <div class="row"><h4 class="mt-2">Step 4: Choose what to count</h4></div>
+    <div class="row"><h4 class="mt-2">Step 3: Choose what to count</h4></div>
     <div class="row">
         <div class="d-block">
             <div class="custom-control custom-radio">
