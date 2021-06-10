@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Contrastive Drama: Results{% endblock %}
+
+{% block intro %}
+<div class="container">
+    <h1 class="mt-5">Results</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+        <div class="alert alert-info text-center" role="alert">
+            <div class="container">
+                <h3>How to interpret the chart?</h3>
+                <p><b>Upper elements:</b> {{ comparison_elements[0] }}</p>
+                <p><b>Lower elements:</b> {{ comparison_elements[1] }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="container">
+            <div class="row justify-content-center">
+                <h3>Corpus: {{ corpus1 }}</h3>
+            </div>
+        </div>
+        {% if not corpus1_exists %}
+        <div class="container">
+            <div class="row justify-content-center">
+                <p>Unfortunately, no data is available for this corpus.</p>
+            </div>
+        </div>
+        {% else %}
+        <div class="container">
+            <img src="{{ url_for('static', filename=corpus1_pyzeta) }}" class="img-responsive" width="100%" >
+        </div>
+        {% endif %}
+    </div>
+    <div class="col-md-6">
+        <div class="container">
+            <div class="row justify-content-center">
+                <h3>Corpus: {{ corpus2 }}</h3>
+            </div>
+        </div>
+        {% if not corpus2_exists %}
+        <div class="container">
+            <div class="row justify-content-center">
+                <p>Unfortunately, no data is available for this corpus.</p>
+            </div>
+        </div>
+        {% else %}
+        <div class="container">
+            <img src="{{ url_for('static', filename=corpus2_pyzeta) }}" class="img-responsive" width="100%" >
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

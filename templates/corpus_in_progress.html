@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Contrastive Drama: Results{% endblock %}
+
+{% block intro %}
+<div class="container">
+    <h1 class="mt-5">Results</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="jumbotron">
+        <p>Unfortunately, one of the corpora you requested is taking additional time
+        to be added to the web app. I'm working to bring it to you as soon as possible but there still are minor tweaks
+        to be done.</p>
+        <p>This issue currently affects Spanish Drama Corpus, Roman Drama Corpus and Greek Drama Corpus.</p>
+        <div class="row justify-content-center">
+            <p>Care to try compare some other dramas in the meantime?</p>
+        </div>
+        <div class="row justify-content-center">
+            <a href="/compare"><button class="btn btn-primary btn-lg" type="submit" id="submission">
+                Try again
+            </button></a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

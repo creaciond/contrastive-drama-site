@@ -9,5 +9,53 @@
 {% endblock %}
 
 {% block content %}
-<p><a href="https://dracor.org">dracor.org</a></p>.
+<div class="container">
+    <h2>Data</h2>
+    <p>
+        This web application uses data from the <a href="https://dracor.org">Drama Corpora project</a>.
+        DraCor offers 11 drama corpora (and some other are currently being prepared for public access).
+        All dramas are TEI-encoded.
+    </p>
+    <p>
+        As well as encoded play texts, DraCor offers a variety of tools to interact with play data: Easy Linavis
+        & Shiny app to discover play networks as well as API (+Swagger interactive documentation) and SPARQL
+        endpoints for custom data requests.
+    </p>
+</div>
+<div class="container">
+    <h2>Metrics</h2>
+    <p>Three metrics are available:</p>
+    <div class="row">
+        <div class="col-md-4 justify-content-center">
+            <h4>Frequency</h4>
+            <p>
+                For lemmas — outputs a word cloud, for parts of speech —
+                a scatter plot of dots (each dot = new play), with a line being a linear approximation.
+            </p>
+        </div>
+        <div class="col-md-4 justify-content-center">
+            <h4>Key items</h4>
+            <p>
+                Calculated with <i>log-likelihood</i> metric. The corpus is split into two parts,
+                each part is compared against the whole corpus.
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h4>Items preferred/items avoided</h4>
+            <p>
+                Based on Craig's Zeta metric firstly implemented in the <i>stylo</i> package, later transferred
+                to Python in <a href="https://github.com/cligs/pyzeta">pyzeta</a>.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h2>Code</h2>
+    <p>Is available in two repositories:</p>
+    <ul>
+        <li><a href="https://github.com/creaciond/contrastive-drama">creaciond/contrastive-drama</a> for main code,</li>
+        <li><a href="https://github.com/creaciond/contrastive-drama-site">creaciond/contrastive-drama-site</a> for web application.</li>
+    </ul>
+    <p>Feel free to drop an issue!</p>
+</div>
 {% endblock %}

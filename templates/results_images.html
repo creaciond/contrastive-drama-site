@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Contrastive Drama: Results{% endblock %}
+
+{% block intro %}
+<div class="container">
+    <h1 class="mt-5">Results</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <div class="container">
+            <div class="row justify-content-center">
+                <h3>Corpus: {{ corpus1 }}</h3>
+            </div>
+        </div>
+        {% if len(figures1) == 0 %}
+        <div class="container">
+            <div class="row justify-content-center">
+                <p>Unfortunately, no data is available for this corpus.</p>
+            </div>
+        </div>
+        {% else %}
+        <div class="container">
+            <img src="{{ url_for('static', filename=figures1[0]) }}" class="img-responsive" width="100%" >
+        </div>
+        <div class="container">
+            <img src="{{ url_for('static', filename=figures1[1]) }}" class="img-responsive" width="100%" >
+        </div>
+        {% endif %}
+    </div>
+    <div class="col-md-6">
+        <div class="container">
+            <div class="row justify-content-center">
+                <h3>Corpus: {{ corpus2 }}</h3>
+            </div>
+        </div>
+        {% if len(figures2) == 0 %}
+        <div class="container">
+            <div class="row justify-content-center">
+                <p>Unfortunately, no data is available for this corpus.</p>
+            </div>
+        </div>
+        {% else %}
+        <div class="container">
+            <img src="{{ url_for('static', filename=figures2[0]) }}" class="img-responsive" width="100%" >
+        </div>
+        <div class="container">
+            <img src="{{ url_for('static', filename=figures2[1]) }}" class="img-responsive" width="100%" >
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

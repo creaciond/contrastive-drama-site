@@ -18,6 +18,10 @@
                 <option value="rus">Russian</option>
                 <option value="shake">English (Shakespeare)</option>
                 <option value="ger">German</option>
+                <option value="ita">Italian</option>
+                <option value="span">Spanish (Calderón + Spanish)</option>
+                <option value="rom">Latin</option>
+                <option value="greek">Greek</option>
             </select>
         </div>
 
@@ -27,85 +31,74 @@
                 <option value="rus">Russian</option>
                 <option value="shake">English (Shakespeare)</option>
                 <option value="ger">German</option>
+                <option value="ita">Italian</option>
+                <option value="span">Spanish (Calderón + Spanish)</option>
+                <option value="rom">Latin</option>
+                <option value="greek">Greek</option>
             </select>
         </div>
     </div>
 
-    <div class="row"><h4 class="mt-2">Step 2: Choose comparison parameter</h4></div>
+    <div class="row"><h4 class="mt-2">Step 2: Choose corpus split parameter</h4></div>
     <div class="row">
-        <div class="custom-control custom-radio">
-                <input name="comparison" type="radio" id="time" value="time" class="custom-control-input">
-                <label class="custom-control-label" for="time">Evolution through time</label>
-        </div>
-        <!-- <div class="col-md-3">
-            <div class="custom-control custom-radio">
-                <input name="comparison" type="radio" id="relations" value="relations" class="custom-control-input">
-                <label class="custom-control-label" for="relations">Family relations</label>
-            </div>
-            <select class="custom-select" id="relations_type_select">
-                <option value="parents_children">Parents vs. Children</option>
-                <option value="husbands_wives">Husbands vs. Wives</option>
-            </select>
-        </div>
         <div class="col-md-3">
             <div class="custom-control custom-radio">
                 <input name="comparison" type="radio" id="time" value="time" class="custom-control-input">
                 <label class="custom-control-label" for="time">Evolution through time</label>
             </div>
-        </div> -->
-        <!-- <div class="col-md-3">
-            <div class="custom-control custom-radio">
-                <input name="comparison" type="radio" id="genre" value="genre" class="custom-control-input">
-                <label class="custom-control-label" for="genre">Genre</label>
-            </div>
-            <select class="custom-select" id="genre_type_select">
-                <option value="comedies">Comedies</option>
-                <option value="tragedies">Tragedies</option>
-            </select>
         </div>
         <div class="col-md-3">
             <div class="custom-control custom-radio">
-                <input name="comparison" type="radio" id="text_type" value="text_type" class="custom-control-input">
-                <label class="custom-control-label" for="text_type">Text type</label>
+                <input name="comparison" type="radio" id="gender" value="gender" class="custom-control-input">
+                <label class="custom-control-label" for="gender">Male vs. Female character talk</label>
             </div>
-            <select class="custom-select" id="text_type_select">
-                <option value="spoken">Spoken text</option>
-                <option value="stage">Stage direction</option>
-            </select>
-        </div> -->
+        </div>
+        <div class="col-md-3">
+            <div class="custom-control custom-radio">
+                <input name="comparison" type="radio" id="parents_children" value="parents_children" class="custom-control-input">
+                <label class="custom-control-label" for="parents_children">Parents vs. Children character talk</label>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="custom-control custom-radio">
+                <input name="comparison" type="radio" id="spoken_stage" value="spoken_stage" class="custom-control-input">
+                <label class="custom-control-label" for="spoken_stage">Spoken text vs. Stage directions</label>
+            </div>
+        </div>
     </div>
-    <!-- <div class="row"><h4 class="mt-2">Step 3: Choose operationalization parameter</h4></div>
+
+    <div class="row"><h4 class="mt-2">Step 3: Choose operationalization parameter</h4></div>
     <div class="row">
         <div class="col-md-4">
             <div class="custom-control custom-radio">
-                <input name="parameter" type="radio" id="frequency" value="frequency" class="custom-control-input">
+                <input name="metrics" type="radio" id="frequency" value="frequency" class="custom-control-input">
                 <label class="custom-control-label" for="frequency">Frequency</label>
             </div>
         </div>
         <div class="col-md-4">
             <div class="custom-control custom-radio">
-                <input name="parameter" type="radio" id="prefer_avoid" value="prefer_avoid" class="custom-control-input">
-                <label class="custom-control-label" for="prefer_avoid">Items preferred/items avoided</label>
+                <input name="metrics" type="radio" id="keyness" value="keyness" class="custom-control-input">
+                <label class="custom-control-label" for="keyness">Key items</label>
             </div>
         </div>
         <div class="col-md-4">
             <div class="custom-control custom-radio">
-                <input name="parameter" type="radio" id="keyness" value="keyness" class="custom-control-input">
-                <label class="custom-control-label" for="keyness">Key items</label>
+                <input name="metrics" type="radio" id="pyzeta" value="pyzeta" class="custom-control-input">
+                <label class="custom-control-label" for="pyzeta">Items preferred/items avoided</label>
             </div>
         </div>
-    </div> -->
+    </div>
 
-    <div class="row"><h4 class="mt-2">Step 3: Choose what to count</h4></div>
+    <div class="row"><h4 class="mt-2">Step 4: Choose what to count</h4></div>
     <div class="row">
         <div class="d-block">
             <div class="custom-control custom-radio">
-                <input name="count" type="radio" id="pos" value="pos" class="custom-control-input">
+                <input name="token_type" type="radio" id="pos" value="pos" class="custom-control-input">
                 <label class="custom-control-label" for="pos">Parts of speech</label>
             </div>
             <div class="custom-control custom-radio">
-                <input name="count" type="radio" id="words" value="words" class="custom-control-input">
-                <label class="custom-control-label" for="words">Words</label>
+                <input name="token_type" type="radio" id="lemmas" value="lemmas" class="custom-control-input">
+                <label class="custom-control-label" for="lemmas">Words</label>
             </div>
         </div>
     </div>
@@ -115,7 +108,7 @@
             Compare
         </button>
         <div id="loader"><button class="btn btn-primary btn-lg" id="loading">
-            <span class="spinner-border spinner-border-sm"></span>Loading…
+            <span class="spinner-border spinner-border-sm"></span>&emsp;Loading…
         </button></div>
     </div>
 </form>
